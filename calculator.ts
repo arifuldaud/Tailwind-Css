@@ -143,3 +143,28 @@ async function validateAgeAsync(age:number):Promise<string> {
   }
   
 }
+
+function validateAgeAsync(age: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    if (age >= 18) {
+      setTimeout(() => {
+        resolve("Access Granted");
+      }, 1000);
+    } else {
+      reject(new Error("Access Denied: Must be 18 or older"));
+    }
+  });
+}
+
+async function main() {
+  try {
+    console.log(await validateAgeAsync(20));
+    console.log(await validateAgeAsync(16));
+  } catch (error) {
+    if (error instanceof Error) {
+      console.log(error.message);
+    }
+  }
+}
+
+main();
