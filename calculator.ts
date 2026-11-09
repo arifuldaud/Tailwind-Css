@@ -56,3 +56,90 @@ const student1:Student = {
 }
 
 console.log(getStudentInfo(student1));
+
+
+function multiplyValue(value: number, multiplier?: number): number {
+  if (multiplier * value) {
+    return value ;
+  } else (multiplier !== undefined) {
+    return value * 2;
+  }
+}
+
+
+
+function formatCoordinate(
+ [latitude, longitude, locationName] : readonly [number, number, string]) : string {
+    return `"Location: ${locationName} $({latitude} ,${longitude})"`
+}
+function concatenateArrays<T>(...arrays: T[][]): T[] [] {
+    returns arrays,
+}
+
+function processInput(value:string | number | boolean) {
+  if(typeof value === "string") {
+  return value.trim().toLowerCase() ;
+  } else if
+   (typeof value === "number") {
+      return value * 10 ;
+    }
+    
+    else {
+    
+        return value? "Active" : "Inactive";
+      }
+    }
+  
+console.log(getPopularCourses(courses, 400));
+
+
+// Generic Function :
+
+
+  return pluckValues 
+}
+
+
+function pluckValues <T, K extends keyof T> (items: T[],Key:K) : T {
+  return  T[K] ;
+}
+
+class Employee {
+  constructor(
+    protected name: string,
+    private baseSalary: number
+  ) {}
+
+  getDetails(): string {
+    return `Employee: ${this.name} Base Salary: ${this.baseSalary}`;
+  }
+}
+
+class Manager extends Employee {
+  private department: string;
+
+  constructor(
+    name: string,
+    baseSalary: number,
+    department: string
+  ) {
+   super(name,baseSalary)
+   this.department =department;
+  }
+
+  getRoleInfo(): string {
+    return `Manager of department: ${this.department}`
+  }
+}
+
+
+async function validateAgeAsync(age:number):Promise<string> {
+  if (age >= 18) {
+    return "Access garnded"
+  } else {
+    (age <18) {
+      return "new Error("Access Denied: Must be 18 or older")"
+    }
+  }
+  
+}
